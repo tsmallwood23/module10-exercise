@@ -1,4 +1,6 @@
 architecture: replication
+metadata:
+  namespace: exercise
 auth:
   existingSecret: mysql-secret
 volumePermissions:
