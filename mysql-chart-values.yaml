@@ -1,19 +1,12 @@
-replicas: 3
-env:
-  DBUSERNAME: xxx
-  DBPASS: xxx
-persistence:
-  storageClass: "linode-block-storage"
-
+architecture: replication
 auth:
-  existingSecret: mysql-secret.yaml
+  existingSecret: mysql-secret
+volumePermissions:
+  enabled: true
+secondary:
+  replicaCount: 2
+  persistence:
+    accessModes: "ReadWriteOnce"
+    storageClass: "linode-block-storage"
 
 
-
----
-architecture: replicaset
-replicaCount: 3
-persistence:
-  storageClass: "linode-block-storage"
-auth:
-  rootPassword: secret-root-pwd
