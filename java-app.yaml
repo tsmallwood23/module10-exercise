@@ -39,7 +39,7 @@ spec:
                 key: db_name
           - name: DB_SERVER
             valueFrom:
-              secretKeyRef:
+              configMapKeyRef:
                 name: mysql-configmap
                 key: db_server
 ---
