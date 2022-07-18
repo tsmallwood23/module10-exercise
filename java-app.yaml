@@ -25,22 +25,22 @@ spec:
           - name: DB_USER
             valueFrom:
               secretKeyRef:
-                name: db-secret
+                name: mysql-secret
                 key: db_user
           - name: DB_PWD
             valueFrom:
               secretKeyRef:
-                name: db-secret
+                name: mysql-secret
                 key: db_pwd
           - name: DB_NAME
             valueFrom:
               secretKeyRef:
-                name: db-secret
+                name: mysql-secret
                 key: db_name
           - name: DB_SERVER
             valueFrom:
               secretKeyRef:
-                name: db-configmap
+                name: mysql-configmap
                 key: db_server
 ---
 apiVersion: v1
