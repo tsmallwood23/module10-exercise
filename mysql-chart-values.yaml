@@ -8,7 +8,7 @@ volumePermissions:
 secondary:
   replicaCount: 2
   persistence:
-    accessModes: "ReadWriteOnce"
+    accessModes: ["ReadWriteOnce"]
     storageClass: "linode-block-storage"
 
 
