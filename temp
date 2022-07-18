@@ -1,0 +1,5 @@
+ kubectl create secret docker-registry docker-hub \
+ --docker-server=docker.io \
+ --docker-username=tsmallwood23 \
+ --docker-password='%0kZhkHQ0Ba4R#f0p!GL' \
+ --docker-email=smallwood.tanner23@gmail.com

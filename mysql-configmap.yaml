@@ -1,0 +1,7 @@
+apiVersion:
+kind: configMap
+metadata:
+  name: mysql-configmap
+  namespace: exercise
+data:
+  db_server: mysql-primary.exercise

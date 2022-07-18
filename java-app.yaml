@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app
+  namespace: exercise
+spec:
+  replicas: 3
+  selector:
+    matchlabels:
+      app: java-app
+  template:
+    metadata:
+      labels: java-app
+    spec:
+      imagePullSecrets:
+        - name: docker-hub
+      containers:
+      - name: java-app
+        image: tsmallwood23/my-repo:java-mysqlv1.0
+        ports:
+        - containerport: 8080
+        env:
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: db_user
+          - name: DB_PWD
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: db_pwd
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: db_name
+          - name: DB_SERVER
+            valueFrom:
+              secretKeyRef:
+                name: db-configmap
+                key: db_server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-app
+  namespace: exercise
+spec:
+  selector:
+    app: java-app
+ports:
+- protocol: TCP
+  targetPort: 8080
+  port: 8080
