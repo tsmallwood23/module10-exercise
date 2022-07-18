@@ -11,7 +11,8 @@ spec:
       app: java-app
   template:
     metadata:
-      labels: java-app
+      labels:
+        app: java-app
     spec:
       imagePullSecrets:
       - name: docker-hub
