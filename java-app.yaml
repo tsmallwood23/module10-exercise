@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: java-app
   namespace: exercise
+  labels:
+    app: java-app
 spec:
   replicas: 3
   selector:
@@ -13,7 +15,7 @@ spec:
       labels: java-app
     spec:
       imagePullSecrets:
-        - name: docker-hub
+      - name: docker-hub
       containers:
       - name: java-app
         image: tsmallwood23/my-repo:java-mysqlv1.0
