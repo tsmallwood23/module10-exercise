@@ -18,7 +18,7 @@ spec:
       - name: java-app
         image: tsmallwood23/my-repo:java-mysqlv1.0
         ports:
-        - containerport: 8080
+        - containerPort: 8080
         env:
           - name: DB_USER
             valueFrom:
