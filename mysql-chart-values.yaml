@@ -1,1 +1,19 @@
-i
+replicas: 3
+env:
+  DBUSERNAME: xxx
+  DBPASS: xxx
+persistence:
+  storageClass: "linode-block-storage"
+
+auth:
+  existingSecret: mysql-secret.yaml
+
+
+
+---
+architecture: replicaset
+replicaCount: 3
+persistence:
+  storageClass: "linode-block-storage"
+auth:
+  rootPassword: secret-root-pwd
