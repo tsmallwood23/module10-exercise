@@ -13,5 +13,8 @@ secondary:
     storageClass: "linode-block-storage"
   startupProbe:
     enabled: false
-
+  livenessProbe:
+    enabled: false
+  readinessProbe:
+    enabled: false
 
