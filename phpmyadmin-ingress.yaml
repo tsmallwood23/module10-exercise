@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: phpmyadmin-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: 96-126-99-79.ip.linodeusercontent.com
+      http:
+        paths:
+          - pathType: Exact
+            path: /
+            backend:
+              service:
+                name: phpmyadmin
+                port:
+                  number: 8081
