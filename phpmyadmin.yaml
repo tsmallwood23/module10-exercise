@@ -31,6 +31,11 @@ spec:
               configMapKeyRef:
                 name: mysql-configmap
                 key: db_server
+          - name: PMA_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: mysql-configmap
+                key: pma_port
 ---
 apiVersion: v1
 kind: Service

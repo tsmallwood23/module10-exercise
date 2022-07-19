@@ -4,3 +4,4 @@ metadata:
   name: mysql-configmap
 data:
   db_server: mysql-primary.exercise
+  pma_port: 3306
