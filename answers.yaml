@@ -1,9 +1,9 @@
 architecture: replication
 auth:
-  rootPassword: secret-root-pass
-  database: my-app-db
-  username: my-user
-  password: my-pass
+  rootPassword: Melissa123
+  database: my-db
+  username: tanner
+  password: Tanner123
 
 # enable init container that changes the owner and group of the persistent volume mountpoint to runAsUser:fsGroup
 volumePermissions:
