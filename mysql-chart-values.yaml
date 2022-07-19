@@ -5,6 +5,7 @@ auth:
   existingSecret: mysql-chart-secret
   database: my-db
   username: tanner
+  replicationUser: william
 volumePermissions:
   enabled: true
 secondary:
