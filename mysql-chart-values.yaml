@@ -1,6 +1,4 @@
 architecture: replication
-metadata:
-  namespace: exercise
 auth:
   existingSecret: mysql-chart-secret
   database: my-db
