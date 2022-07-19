@@ -2,7 +2,9 @@ architecture: replication
 metadata:
   namespace: exercise
 auth:
-  existingSecret: mysql-secret
+  existingSecret: mysql-chart-secret
+  database: my-db
+  username: tanner
 volumePermissions:
   enabled: true
 secondary:
