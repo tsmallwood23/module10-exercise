@@ -16,12 +16,14 @@ spec:
     spec:
       imagePullSecrets:
       - name: docker-hub
+      # created seperately (see notes https://app.clickup.com/36070315/v/dc/12crxb-3004/12crxb-6608)
       containers:
       - name: java-app
         image: tsmallwood23/my-repo:java-mysqlv1.0
         ports:
         - containerPort: 8080
         env:
+        # these are required env vars for our java app to run (it needs a database conenction)
           - name: DB_USER
             valueFrom:
               secretKeyRef:
